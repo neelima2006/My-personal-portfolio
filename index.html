@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Personal Portfolio</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f8f7ff;
+    color: #29213f;
+}
+
+/* NAVBAR */
+
+header {
+    background: #241044;
+    padding: 18px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    flex-wrap: wrap;
+}
+
+.logo {
+    color: white;
+    font-size: 27px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #ffca3a;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #ffca3a;
+}
+
+/* HOME */
+
+.home {
+    min-height: 90vh;
+    background: linear-gradient(120deg, #7209b7, #4361ee, #f72585);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 60px 8%;
+    color: white;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.home-content {
+    max-width: 550px;
+}
+
+.home-content h3 {
+    font-size: 25px;
+}
+
+.home-content h1 {
+    font-size: 50px;
+    margin: 15px 0;
+}
+
+.home-content h2 {
+    font-size: 28px;
+    color: #ffca3a;
+}
+
+.home-content p {
+    margin-top: 20px;
+    line-height: 1.8;
+    font-size: 17px;
+}
+
+.profile {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: #ffca3a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 130px;
+    border: 8px solid white;
+    box-shadow: 0 0 30px #ffffff66;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 13px 28px;
+    background: #ffca3a;
+    color: #241044;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+/* SECTIONS */
+
+section {
+    padding: 65px 8%;
+}
+
+.title {
+    text-align: center;
+    font-size: 35px;
+    color: #7209b7;
+    margin-bottom: 35px;
+}
+
+/* ABOUT */
+
+.about {
+    text-align: center;
+}
+
+.about p {
+    max-width: 850px;
+    margin: auto;
+    line-height: 2;
+    font-size: 17px;
+}
+
+/* EDUCATION */
+
+.education {
+    background: #eee8ff;
+}
+
+.edu-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.edu-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 15px #ddd;
+    border-bottom: 5px solid #7209b7;
+}
+
+.edu-card h3 {
+    color: #7209b7;
+    margin-bottom: 12px;
+}
+
+/* SKILLS */
+
+.skill-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+.skill {
+    background: white;
+    padding: 25px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px #ddd;
+    font-size: 20px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.skill:hover {
+    background: #7209b7;
+    color: white;
+    transform: translateY(-7px);
+}
+
+/* PROJECTS */
+
+.projects {
+    background: #eee8ff;
+}
+
+.project-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.project-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 15px #ddd;
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+}
+
+.project-card .emoji {
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+.project-card h3 {
+    color: #7209b7;
+    margin-bottom: 12px;
+}
+
+.project-card p {
+    line-height: 1.7;
+}
+
+/* CONTACT */
+
+.contact-container {
+    max-width: 600px;
+    margin: auto;
+}
+
+.contact-container input,
+.contact-container textarea {
+    width: 100%;
+    padding: 14px;
+    margin: 10px 0;
+    border: 2px solid #d7c4ef;
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;
+}
+
+.contact-container input:focus,
+.contact-container textarea:focus {
+    border-color: #7209b7;
+}
+
+.contact-container button {
+    background: linear-gradient(90deg, #7209b7, #f72585);
+    color: white;
+    padding: 14px 30px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* FOOTER */
+
+footer {
+    background: #241044;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+footer span {
+    color: #ffca3a;
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 600px) {
+
+    header {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    nav {
+        text-align: center;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 6px;
+        font-size: 14px;
+    }
+
+    .home-content h1 {
+        font-size: 36px;
+    }
+
+    .home-content h2 {
+        font-size: 23px;
+    }
+
+    .profile {
+        width: 190px;
+        height: 190px;
+        font-size: 95px;
+    }
+
+    .title {
+        font-size: 28px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<header>
+    <div class="logo">My<span>Portfolio</span></div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<!-- HOME -->
+
+<section class="home" id="home">
+
+    <div class="home-content">
+
+        <h3>Hello, Welcome to My Portfolio</h3>
+
+        <h1>I'm Your Name</h1>
+
+        <h2>Student | Web Developer</h2>
+
+        <p>
+            I am a passionate student interested in web development
+            and programming. I enjoy learning new technologies
+            and creating creative websites.
+        </p>
+
+        <a href="#about" class="btn">Explore More</a>
+
+    </div>
+
+    <div class="profile">
+        👩‍💻
+    </div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+    <h2 class="title">About Me</h2>
+
+    <p>
+        Hello! I am a student with an interest in technology,
+        programming and web development. I have basic knowledge
+        of HTML, CSS, JavaScript, Python and Java.
+
+        My goal is to improve my technical skills, develop
+        real-world projects and build a successful career
+        in the IT industry.
+    </p>
+
+</section>
+
+<!-- EDUCATION -->
+
+<section class="education" id="education">
+
+    <h2 class="title">My Education</h2>
+
+    <div class="edu-container">
+
+        <div class="edu-card">
+            <h3>🎓 Graduation</h3>
+            <p>Bachelor's Degree</p>
+            <p>Computer Science</p>
+            <p>Year: 2023 - 2026</p>
+        </div>
+
+        <div class="edu-card">
+            <h3>📚 Intermediate</h3>
+            <p>Intermediate Education</p>
+            <p>Year: 2021 - 2023</p>
+        </div>
+
+        <div class="edu-card">
+            <h3>🏫 School</h3>
+            <p>Secondary Education</p>
+            <p>Year: 2020 - 2021</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+    <h2 class="title">My Technical Skills</h2>
+
+    <div class="skill-container">
+
+        <div class="skill">🌐 HTML</div>
+
+        <div class="skill">🎨 CSS</div>
+
+        <div class="skill">⚡ JavaScript</div>
+
+        <div class="skill">🐍 Python</div>
+
+        <div class="skill">☕ Java</div>
+
+        <div class="skill">🗄️ SQL</div>
+
+    </div>
+
+</section>
+
+<!-- PROJECTS -->
+
+<section class="projects" id="projects">
+
+    <h2 class="title">My Projects</h2>
+
+    <div class="project-container">
+
+        <div class="project-card">
+            <div class="emoji">🛍️</div>
+            <h3>Online Shopping Website</h3>
+            <p>
+                Developed an online shopping website
+                using HTML, CSS and JavaScript.
+            </p>
+        </div>
+
+        <div class="project-card">
+            <div class="emoji">🎓</div>
+            <h3>Student Management</h3>
+            <p>
+                A student management project to
+                organize student information.
+            </p>
+        </div>
+
+        <div class="project-card">
+            <div class="emoji">📝</div>
+            <h3>To-Do List</h3>
+            <p>
+                A simple task management application
+                using JavaScript.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+    <h2 class="title">Contact Me</h2>
+
+    <div class="contact-container">
+
+        <form id="contactForm">
+
+            <input type="text" id="name"
+            placeholder="Enter Your Name" required>
+
+            <input type="email" id="email"
+            placeholder="Enter Your Email" required>
+
+            <input type="text" id="subject"
+            placeholder="Enter Subject" required>
+
+            <textarea id="message" rows="5"
+            placeholder="Enter Your Message" required></textarea>
+
+            <button type="submit">Send Message 🚀</button>
+
+        </form>
+
+        <p id="response" style="margin-top:15px;color:green;"></p>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+    <h2>My<span>Portfolio</span></h2>
+
+    <p>Thank you for visiting my personal portfolio!</p>
+
+    <p>© 2026 My Portfolio. All Rights Reserved.</p>
+
+</footer>
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+// CONTACT FORM
+
+document.getElementById("contactForm")
+.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    let name = document.getElementById("name").value;
+
+    document.getElementById("response").innerText =
+        "Thank you " + name + "! Your message was received.";
+
+    document.getElementById("contactForm").reset();
+
+});
+
+// WELCOME MESSAGE
+
+console.log("Welcome to My Personal Portfolio!");
+
+// NAVIGATION ACTIVE EFFECT
+
+let links = document.querySelectorAll("nav a");
+
+links.forEach(link => {
+
+    link.addEventListener("click", function() {
+
+        links.forEach(item => item.style.color = "white");
+
+        this.style.color = "#ffca3a";
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
